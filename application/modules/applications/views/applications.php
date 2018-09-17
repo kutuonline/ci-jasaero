@@ -150,9 +150,13 @@
 				<div class="widget">
 					<h5 class="widgetheading">Quick Links</h5>
 					<ul class="link-list">
-						<li><a href="<?php echo base_url('applications'); ?>">Application</a></li>
-						<li><a href="<?php echo base_url('career'); ?>">Career</a></li>
-						<li><a href="<?php echo base_url('contact'); ?>">Contact Us</a></li>
+						<li><a href="<?php echo base_url('aboutus'); ?>">About Us</a></li>
+                        <li><a href="<?php echo base_url('service'); ?>">Services</a></li>
+                        <li><a href="<?php echo base_url('home/#customers'); ?>">Our Customers</a></li>
+                        <li><a href="<?php echo base_url('applications'); ?>">Applications</a></li>
+                        <li><a href="<?php echo base_url('news'); ?>">News</a></li>
+            			<li><a href="<?php echo base_url('career'); ?>">Career</a></li>
+            			<li><a href="<?php echo base_url('contact'); ?>">Contact Us</a></li>
 					</ul>
 				</div>
 			</div>

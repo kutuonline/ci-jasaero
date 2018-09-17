@@ -12,10 +12,11 @@ class M_News extends CI_Model {
         parent::__construct();
     }   
 
-    function getWhereNews(){
+    /*-- get news where isActiveNews = Y --*/
+    function getWhereNews($limit, $start){
         $this->db->select('*');
         $this->db->where($this->active, 'Y');
-        return $this->db->get($this->table);
+        return $this->db->get($this->table, $limit, $start);
     }
 
     /*-- get news by slug --*/

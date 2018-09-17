@@ -154,7 +154,7 @@
           <div class="row">
               <div class="col-md-12">
                   <?php foreach($cust as $row4){ ?>
-                      <div class="aligncenter"><h2 class="aligncenter"><?php echo $row4->title_profile; ?></h2><?php echo $row4->desc_profile; ?></div>
+                      <div id="customers" class="aligncenter"><h2 class="aligncenter"><?php echo $row4->title_profile; ?></h2><?php echo $row4->desc_profile; ?></div>
                   <?php } ?>
               </div>
           </div>
@@ -217,9 +217,23 @@
                 <div class="widget">
                     <h5 class="widgetheading">Quick Links</h5>
                     <ul class="link-list">
+                        <li><a href="<?php echo base_url('aboutus'); ?>">About Us</a></li>
+                        <li><a href="<?php echo base_url('service'); ?>">Services</a></li>
+                        <li><a href="<?php echo base_url('home/#customers'); ?>">Our Customers</a></li>
                         <li><a href="<?php echo base_url('applications'); ?>">Applications</a></li>
+                        <li><a href="<?php echo base_url('news'); ?>">News</a></li>
                         <li><a href="<?php echo base_url('career'); ?>">Career</a></li>
                         <li><a href="<?php echo base_url('contact'); ?>">Contact us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Associate Member Of</h5>
+                    <ul class="link-list">
+                        <img src="<?php echo base_url('assets/img/iamsa.jpg');?>" style="width:85%" oncontextmenu="return false;"><br><br>
+                        <img src="<?php echo base_url('assets/img/iatp.png');?>" style="width:85%" oncontextmenu="return false;">
                     </ul>
                 </div>
             </div>
@@ -236,15 +250,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <ul class="social-network">
-                        <li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-                        <li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
-                </div>
+
             </div>
         </div>
   </div>

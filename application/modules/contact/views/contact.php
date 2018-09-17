@@ -26,6 +26,12 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+<!-- 
+javascript recaptcha 
+jika sudah online, mohon enable
+-->
+<?php //echo $script_captcha; ?>
+
 </head>
 <body>
 <div id="wrapper">
@@ -79,9 +85,6 @@
 								<tr>
 									<td><?php echo $row->corp_address; ?></td>
 								</tr>
-								<tr>
-									<td>Postal Code: <?php echo $row->postal_code; ?></td>
-								</tr>
 								<tr><td>&nbsp;</td></tr>
 								<tr>
 									<td><i class=" fa fa-phone" title="Phone"></i>&nbsp;&nbsp;<?php echo $row->phone_no; ?></td>
@@ -122,6 +125,15 @@
                 			<textarea name="msg" class="form-control" placeholder="Message" rows="4" required></textarea>
             			</div>
 
+            			<!-- 
+            			menampilkan re-captcha
+            			jika sudah onlinr, mohon di enable
+            			-->
+            			<!--<div class="form-group">
+                			<?php //echo $captcha; ?>
+            			</div>
+            			-->
+
 	    				<button class="btn btn-primary pull-right">Send</button><br />
 	    			</form>
 				</div>
@@ -155,34 +167,25 @@
 				<div class="widget">
 					<h5 class="widgetheading">Quick Links</h5>
 					<ul class="link-list">
-            			<li><a href="<?php echo base_url('applications'); ?>">Applications</a></li>
+						<li><a href="<?php echo base_url('aboutus'); ?>">About Us</a></li>
+                        <li><a href="<?php echo base_url('service'); ?>">Services</a></li>
+                        <li><a href="<?php echo base_url('home/#customers'); ?>">Our Customers</a></li>
+                        <li><a href="<?php echo base_url('applications'); ?>">Applications</a></li>
+                        <li><a href="<?php echo base_url('news'); ?>">News</a></li>
             			<li><a href="<?php echo base_url('career'); ?>">Career</a></li>
             			<li><a href="<?php echo base_url('contact'); ?>">Contact Us</a></li>
           			</ul>
 				</div>
 			</div>
-			<!--
 			<div class="col-lg-3">
-				<div class="widget">
-					<h5 class="widgetheading">Latest posts</h5>
-					<ul class="link-list">
-						<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-						<li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-						<li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3">
-					<div class="widget">
-					<h5 class="widgetheading">Recent News</h5>
-					<ul class="link-list">
-						<li><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a></li>
-						<li><a href="#">Pellentesque et pulvinar enim. Quisque at tempor ligula</a></li>
-						<li><a href="#">Natus error sit voluptatem accusantium doloremque</a></li>
-					</ul>
-				</div>
-			</div>
-			-->
+                <div class="widget">
+                    <h5 class="widgetheading">Associate Member Of</h5>
+                    <ul class="link-list">
+                        <img src="<?php echo base_url('assets/img/iamsa.jpg');?>" style="width:85%" oncontextmenu="return false;"><br><br>
+                        <img src="<?php echo base_url('assets/img/iatp.png');?>" style="width:85%" oncontextmenu="return false;">
+                    </ul>
+                </div>
+            </div>
 		</div>
 	</div>
 	<div id="sub-footer">
@@ -195,15 +198,7 @@
 						</p>
 					</div>
 				</div>
-				<div class="col-lg-6">
-					<ul class="social-network">
-						<li><a href="#" data-placement="top" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-						<li><a href="#" data-placement="top" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-						<li><a href="#" data-placement="top" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-						<li><a href="#" data-placement="top" title="Pinterest"><i class="fa fa-pinterest"></i></a></li>
-						<li><a href="#" data-placement="top" title="Google plus"><i class="fa fa-google-plus"></i></a></li>
-					</ul>
-				</div>
+				
 			</div>
 		</div>
 	</div>
