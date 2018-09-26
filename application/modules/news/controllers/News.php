@@ -15,7 +15,7 @@ class News extends CI_Controller{
 		//konfigurasi pagination
         $config['base_url'] = site_url('news/index'); //site url
         $config['total_rows'] = $this->db->count_all('news'); //total row
-        $config['per_page'] = 3;  //show record per halaman
+        $config['per_page'] = 6;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);

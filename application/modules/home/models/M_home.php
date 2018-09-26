@@ -32,6 +32,13 @@ class M_home extends CI_Model {
         return $this->db->get($this->table);
     }
 
+    function getWhereProfile(){
+        $this->db->select('*');
+        $this->db->where($this->id3, '2');
+        $this->db->where('isActiveProfile', 'Y');
+        return $this->db->get($this->table3);
+    }
+
     function getService(){
         $this->db->order_by($this->id2, $this->order2);
         return $this->db->get($this->table2);
@@ -40,12 +47,6 @@ class M_home extends CI_Model {
     function getCust(){
         $this->db->order_by($this->id4, $this->order4);
         return $this->db->get($this->table4);
-    }
-
-    function getWhereProfile(){
-        $this->db->select('*');
-        $this->db->where($this->id3, '2');
-        return $this->db->get($this->table3);
     }
 
     function getWhereCust(){

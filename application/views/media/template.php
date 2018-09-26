@@ -47,7 +47,8 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-default navbar-fixed-top">
             <div class="brand">
-                <a href="index.html"><img src="<?php echo base_url('assets/img/logo-jasaero.png'); ?>" alt="JAS Aero-Engineering Services Logo" class="img-responsive logo"  style="width:119px; height:21px;"></a>
+                <a href="<?php echo base_url('main/dashboard'); ?>"><img src="<?php echo base_url('assets/img/jae-admin.png'); ?>" alt="JAS Aero-Engineering Services Logo" class="img-responsive logo"></a>
+                <!-- can be add style="width:119px; height:21px;" at logo -->
             </div>
             <div class="container-fluid">
                 <div class="navbar-btn">
@@ -86,7 +87,9 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url('assets/img/user.png'); ?>" class="img-circle" alt="Avatar"> <span><?php echo ucfirst($this->session->userdata('complete_name')); ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                             <ul class="dropdown-menu">
+                                <!--
                                 <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
+                                -->
                                 <!--
                                 <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
                                 <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
@@ -111,7 +114,6 @@
                             <div id="subPages" class="collapse ">
                                 <ul class="nav">
                                     <li><a href="<?php echo base_url('id_web/web_list');?>" class="">Web Identity</a></li>
-                                    <li><a href="<?php echo base_url('newslist/news_list');?>" class="">News</a></li>
                                     <li><a href="<?php echo base_url('slider/slider_list');?>" class="">Image Slider</a></li>
                                 </ul>
                             </div>
@@ -126,6 +128,7 @@
                                     <li><a href="<?php echo base_url('customer/cust_list');?>" class="">Customer</a></li>
                                     <li><a href="<?php echo base_url('applist/app_list');?>" class="">Application</a></li>
                                     <li><a href="<?php echo base_url('careerlist/career_list');?>" class="">Career</a></li>
+                                    <li><a href="<?php echo base_url('newslist/news_list');?>" class="">News</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -134,8 +137,7 @@
                             <div id="subPages3" class="collapse ">
                                 <ul class="nav">
                                     <li><a href="<?php echo base_url('users/user_list');?>" class="">Users</a></li>
-                                    <!--<li><a href="page-login.html" class="">Login</a></li>
-                                    <!--<li><a href="page-lockscreen.html" class="">Lockscreen</a></li>-->
+                                    <li><a href="<?php echo base_url('archivelist/archive_list');?>" class="">Archives</a></li>
                                 </ul>
                             </div>
                         </li>

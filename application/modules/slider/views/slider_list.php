@@ -62,8 +62,8 @@
                             <td><?php echo $row->isActiveSlider; ?></td>
                             <td>
                                 <div>
-                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_slider;?>"><i class="lnr lnr-magnifier"></i></a>                               
-                                    <?php echo anchor('slider/slider_list/deleteData/'.$row->id_slider,'<i class="lnr lnr-trash"></i>'); ?>
+                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_slider;?>"><i class="lnr lnr-magnifier" title="View"></i></a>                               
+                                    <?php echo anchor('slider/slider_list/deleteData/'.$row->id_slider,'<i class="lnr lnr-trash" title="Delete"></i>'); ?>
                                 </div>
                             </td>
                         </tr>

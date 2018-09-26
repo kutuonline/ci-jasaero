@@ -66,9 +66,9 @@ class Career_list extends CI_Controller{
 			'title_career' => $title,
 			'desc_career' => $desc,
 			'closing_date' => $tgl,
-			'post_date' => $tglskrg,
-			'post_time' => $jamskrg,
-			'post_user' => $this->session->userdata('complete_name'),
+			'mod_date' => $tglskrg,
+			'mod_time' => $jamskrg,
+			'mod_user' => $this->session->userdata('complete_name'),
 			'isActiveCareer' => $aktif
 			);
 

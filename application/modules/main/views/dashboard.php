@@ -14,7 +14,7 @@
 	</div>
 	<div class="panel-body">
 		<div class="row">
-			<center><img src='<?php echo base_url('assets/img/logo-JAE.jpg');?>' class='img-responsive' style='width:75%'></center>
+			<center><img src='<?php echo base_url('assets/img/logo-JAE.jpg');?>' class='img-responsive' style='width:70%'></center>
 		</div>
 		<div class="row"></div>
 	</div>

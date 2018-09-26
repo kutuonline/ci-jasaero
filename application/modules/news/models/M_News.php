@@ -16,6 +16,7 @@ class M_News extends CI_Model {
     function getWhereNews($limit, $start){
         $this->db->select('*');
         $this->db->where($this->active, 'Y');
+        $this->db->order_by($this->id, $this->order);
         return $this->db->get($this->table, $limit, $start);
     }
 

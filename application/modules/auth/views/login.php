@@ -37,7 +37,7 @@
                         <div class="content">
                             <div class="header">
                                 <div class="logo text-center"><img src="<?php echo base_url('assets/img/logo-jasaero.png'); ?>" alt="logo JAS Aero"></div>
-                                <p class="lead">Login to your account</p>
+                                <p class="lead">Login to your dashboard</p>
                             </div>
                             <form class="form-auth-small" action="<?php echo base_url('auth/actLogin') ?>" method="post">
                                 <div class="form-group">
@@ -54,7 +54,7 @@
 
                                 <button type="submit" class="btn btn-success btn-lg btn-block">LOGIN</button>
                                 <div class="bottom">
-                                    <span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Forgot password?</a></span>
+                                    <span class="helper-text"><i class="fa fa-lock"></i> <a href="<?php echo base_url('forgotpass/forgotpass'); ?>">Forgot password?</a></span>
                                 </div>
                             </form>
                         </div>

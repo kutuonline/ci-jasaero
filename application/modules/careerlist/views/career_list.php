@@ -44,6 +44,7 @@
                         <tr>
                             <th>#</th>
                             <th>Title</th>
+                            <th>Post Date</th>
                             <th>Closing Date</th>
                             <th>Active</th>
                             <th>Action</th>
@@ -60,6 +61,7 @@
                         <tr>
                             <td><?php echo $no++; ?></td>
                             <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_career;?>"><?php echo $row->title_career; ?></a></td>
+                            <td><?php echo tgl_indo($row->post_date); ?></td>
                             <td><?php echo tgl_indo($row->closing_date); ?></td>
                             <td><?php echo $row->isActiveCareer; ?></td>
                             <td>
@@ -201,6 +203,10 @@
                     <tr>
                         <td><b>Description</b></td>
                         <td><?php echo $row->desc_career; ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Post Date</b></td>
+                        <td><?php echo tgl_indo($row->post_date); ?></td>
                     </tr>
                     <tr>
                         <td><b>Closing Date</b></td>

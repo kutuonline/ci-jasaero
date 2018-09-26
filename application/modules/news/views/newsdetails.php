@@ -68,9 +68,10 @@
             <div class="row service-v1 margin-bottom-40">
                 <?php foreach($data_detail as $row){ ?>
                 <div class="col-md-12 md-margin-bottom-40">
-                    <img class="img-responsive" src="<?=base_url()?>img_news/<?=$row->img_news;?>" style="width:100%" alt="<?php echo $row->headline; ?>" oncontextmenu="return false;">
                     <h3><?php echo $row->headline; ?></h3>
                     <p class="help-block"><?php echo $row->vol_no_magz; ?></p>
+                    <img class="img-responsive" src="<?=base_url()?>img_news/<?=$row->img_news;?>" style="width:100%" alt="<?php echo $row->headline; ?>" oncontextmenu="return false;">
+                    <br><br>
                     <p><?php echo $row->desc_news; ?></p>   
                 </div>
                 <?php } ?>
@@ -113,8 +114,18 @@
                 <div class="widget">
                     <h5 class="widgetheading">Associate Member Of</h5>
                     <ul class="link-list">
-                        <img src="<?php echo base_url('assets/img/iamsa.jpg');?>" style="width:85%" oncontextmenu="return false;"><br><br>
+                        <!--<img src="<?php //echo base_url('assets/img/iamsa.jpg');?>" style="width:85%" oncontextmenu="return false;"><br><br>-->
                         <img src="<?php echo base_url('assets/img/iatp.png');?>" style="width:85%" oncontextmenu="return false;">
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="widget">
+                    <h5 class="widgetheading">Member Of</h5>
+                    <ul class="link-list">
+                        <img src="<?php echo base_url('assets/img/iamsa.jpg');?>" style="width:85%" oncontextmenu="return false;"><br><br>
+                        <!--<img src="<?php //echo base_url('assets/img/iatp.png');?>" style="width:85%" oncontextmenu="return false;">-->
                     </ul>
                 </div>
             </div>
@@ -138,6 +149,20 @@
 </div>
 
 <?php } ?> <!-- end of id -->
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5bab0b079d44382222fc0122/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
 
 <a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
 <!-- javascript

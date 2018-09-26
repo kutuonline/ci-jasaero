@@ -132,7 +132,7 @@ class Profile_list extends CI_Controller{
 			}
 		} else {
 		
-			/*-- update data jika img service tidak diganti --*/
+			/*-- update data jika img profile tidak diganti --*/
 			$data = array(
 				'title_profile' => $title,
 				'desc_profile' => $desc,

@@ -22,54 +22,63 @@ class Aboutus_model extends CI_Model {
     function getWhereApproval(){
         $this->db->select('*');
         $this->db->where($this->id3, '3');
+        $this->db->where('isActiveProfile', 'Y');
         return $this->db->get($this->table3);
     }
 
     function getWhereStation(){
         $this->db->select('*');
         $this->db->where($this->id3, '6');
+        $this->db->where('isActiveProfile', 'Y');
         return $this->db->get($this->table3);
     }
 
     function getWhereCapabilities(){
         $this->db->select('*');
         $this->db->where($this->id3, '5');
+        $this->db->where('isActiveProfile', 'Y');
         return $this->db->get($this->table3);
     }
 
     function getWhereCommit(){
         $this->db->select('*');
         $this->db->where($this->id3, '7');
+        $this->db->where('isActiveProfile', 'Y');
         return $this->db->get($this->table3);
     }
 
     function getWhereFacility(){
         $this->db->select('*');
         $this->db->where($this->id2, '2');
+        $this->db->where('isActiveFacility', 'Y');
         return $this->db->get($this->table2);
     }
 
     function getWhereQis(){
         $this->db->select('*');
         $this->db->where($this->id, '6');
+        $this->db->where('isActiveApp', 'Y');
         return $this->db->get($this->table);
     }
 
     function getWhereSms(){
         $this->db->select('*');
         $this->db->where($this->id, '5');
+        $this->db->where('isActiveApp', 'Y');
         return $this->db->get($this->table);
     }
 
     function getWhereTcs(){
         $this->db->select('*');
         $this->db->where($this->id, '4');
+        $this->db->where('isActiveApp', 'Y');
         return $this->db->get($this->table);
     }
 
     function getWhereEgb(){
         $this->db->select('*');
         $this->db->where($this->id, '3');
+        $this->db->where('isActiveApp', 'Y');
         return $this->db->get($this->table);
     }
     

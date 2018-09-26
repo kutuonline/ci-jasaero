@@ -13,9 +13,17 @@ class News_list extends CI_Controller{
 
 	function index(){
 		$data['n_list'] = $this->News_model->getNews()->result();
+		$data['newslist'] = $this->News_model->getListArchive()->result();
 		$this->template->load('media/template','newslist/news_list', $data);
 	}
-
+	
+	function editData($id){
+		$where = array('id_news' => $id);
+		$data['l_archive'] = $this->News_model->dropdownList($where, 'news')->result();
+		$data['newslist'] = $this->News_model->getListArchive()->result();
+		$this->template->load('media/template','newslist/news_archive', $data);
+	}
+	
 	function actNew(){
 		/*-- upload file --*/
 		$nmfile = "file_".time();
@@ -36,6 +44,7 @@ class News_list extends CI_Controller{
 		$jamskrg = date("H:i:s");
 		
 		$headln = $this->input->post('headln');
+		$nmarchive = $this->input->post('nmarchive');
 		$slug_headln = slug($this->input->post('headln'));
 		$desc = $this->input->post('desc');
 		$vol_no = $this->input->post('vol_no');
@@ -49,6 +58,7 @@ class News_list extends CI_Controller{
 				$gbr = $this->upload->data();
 
 				$data = array(
+					'id_archive' => $nmarchive,
 					'headline' => $headln,
 					'news_slug' => $slug_headln,
 					'desc_news' => $desc,
@@ -61,6 +71,7 @@ class News_list extends CI_Controller{
 			}
 		} else {
 			$data = array(
+				'id_archive' => $nmarchive,
 				'headline' => $headln,
 				'news_slug' => $slug_headln,
 				'desc_news' => $desc,
@@ -111,6 +122,7 @@ class News_list extends CI_Controller{
 		$jamskrg = date("H:i:s");
 
 		$id = $this->input->post('id');
+		$nmarchive = $this->input->post('nmarchive');
 		$fileLama = $this->input->post('filelama');
 		$headln = $this->input->post('headln');
 		$slug_headln = slug($this->input->post('headln'));
@@ -127,6 +139,7 @@ class News_list extends CI_Controller{
 				$gbr = $this->upload->data();
 
 				$data = array(
+					'id_archive' => $nmarchive,
 					'headline' => $headln,
 					'news_slug' => $slug_headln,
 					'desc_news' => $desc,
@@ -144,6 +157,7 @@ class News_list extends CI_Controller{
 		
 			/*-- update data jika img news tidak diganti --*/
 			$data = array(
+				'id_archive' => $nmarchive,
 				'headline' => $headln,
 				'news_slug' => $slug_headln,
 				'desc_news' => $desc,

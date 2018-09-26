@@ -8,7 +8,7 @@ class Contact extends CI_Controller{
 
 		$this->load->model('home/M_home');
 		$this->load->model('M_Contact');
-		$this->load->library(array('form_validation','Recaptcha'));
+		$this->load->library(array('form_validation','Recaptcha','email'));
 	}
 
 	function index(){
@@ -47,23 +47,40 @@ class Contact extends CI_Controller{
         if ($this->form_validation->run() == FALSE || !isset($response['success']) || $response['success'] <> true) {
             $this->index();
         } else {
-		--*/
+		--*/ 
 
 		$tglskrg = date("Y-m-d");
 		$jamskrg = date("H:i:s");
 
 		$fullnm = $this->input->post('fullNm');
 		$email = $this->input->post('email');
+		$subject = $this->input->post('subject');
 		$msg = $this->input->post('msg');
 		
 		/*-- set for security from xss attack --*/
 		$this->security->xss_clean($data = array(
 			'full_name' => $fullnm,
 			'email' => $email,
+			'subject' => $subject,
 			'msg' => $msg,
 			'post_date_msg' => $tglskrg,
 			'post_time_msg' => $jamskrg,
 		));
+
+		/*-- 
+		sending email using PHPMailer 
+		reference: https://github.com/ivantcholakov/codeigniter-phpmailer
+		--*/
+		$recipient = array('doni.andriansyah@jas-aero.com', 'waskita@jas-aero.com', 'marketing@jas-aero.com', 'ariesta@jas-aero.com');
+
+		$result = $this->email
+    		->from($email)
+    		//->reply_to('yoursecondemail@somedomain.com')    // Optional, an account where a human being reads.
+    		->to($recipient)
+    		->subject($subject)
+    		->message($msg)
+    		->send();
+    	/*-- end sending email --*/
 		
 		$this->M_Contact->insertData($data, 'contact');
 		echo "<script>alert('Your message has been sent.');window.location.href='contact';</script>";

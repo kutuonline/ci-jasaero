@@ -45,6 +45,7 @@
                             <th>#</th>
                             <th>Headline</th>
                             <th>Vol/No/Magz</th>
+                            <th>Archive</th>
                             <th>Active</th>
                             <th>Action</th>
                         </tr>
@@ -59,13 +60,16 @@
 
                         <tr>
                             <td><?php echo $no++; ?></td>
-                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_news;?>"><?php echo $row->headline; ?></a></td>
+                            <!--<td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_news;?>"><?php //echo $row->headline; ?></a></td>-->
+                            <td><?php echo $row->headline; ?></td>
                             <td><?php echo $row->vol_no_magz; ?></td>
+                            <td><?php echo $row->nm_archive; ?></td>
                             <td><?php echo $row->isActiveNews; ?></td>
                             <td>
                                 <div>
-                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_news;?>"><i class="lnr lnr-magnifier"></i></a>                               
-                                    <?php echo anchor('newslist/news_list/deleteData/'.$row->id_news,'<i class="lnr lnr-trash"></i>'); ?>
+                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_news;?>"><i class="lnr lnr-magnifier" title="View"></i></a>                               
+                                    <?php echo anchor('newslist/news_list/deleteData/'.$row->id_news,'<i class="lnr lnr-trash" title="Delete"></i>'); ?>
+                                    <?php echo anchor('newslist/news_list/editData/'.$row->id_news,'<i class="lnr lnr-pencil" title="Edit"></i>'); ?>
                                 </div>
                             </td>
                         </tr>
@@ -109,6 +113,16 @@
                     </div>
 
                     <div class="form-group">
+                        <label>Archive</label>
+                        <select class="form-control" name="nmarchive" required>
+                            <option value=""></option>
+                            <?php foreach($newslist as $rown){ ?>
+                                <option value="<?=$rown->id_archive ?>"><?=$rown->nm_archive?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
                         <label>Image News</label>
                         <input type="file" name="fupload" placeholder=""/>
                         <p class="help-block">Image files must be in *.JPEG, *.JPG, *.PNG. File size does not exceed 2MB. Width 830px and height 550px.</p> 
@@ -127,8 +141,9 @@
 <!-- //add modal -->
 
 <!-- edit modal -->
-<?php foreach($n_list as $r): ?>
-<div class="modal fade" id="edit<?php echo $r->id_news;?>" role="dialog">
+<!--
+<?php //foreach($n_list as $r): ?>
+<div class="modal fade" id="edit<?php //echo $r->id_news;?>" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -137,32 +152,49 @@
             </div>
             <div class="modal-body">
 
-                <form action="<?php echo base_url('newslist/news_list/updateData');?>" name="form1" enctype="multipart/form-data" method="post">
-                    <input type="hidden" name="id" value="<?php echo $r->id_news; ?>">
+                <form action="<?php //echo base_url('newslist/news_list/updateData');?>" name="form1" enctype="multipart/form-data" method="post">
+                    <input type="hidden" name="id" value="<?php //echo $r->id_news; ?>">
                     <div class="form-group">
                         <label>Headline</label>
-                        <input type="text" name="headln" class="form-control" placeholder="" value="<?php echo $r->headline; ?>" required/>
+                        <input type="text" name="headln" class="form-control" placeholder="" value="<?php //echo $r->headline; ?>" required/>
                     </div>
 
                     <div class="form-group">
                         <label>Description</label>
-                        <textarea name="desc" class="form-control" placeholder="" rows="4"><?php echo $r->desc_news; ?></textarea>
+                        <textarea name="desc" class="form-control" placeholder="" rows="4"><?php //echo $r->desc_news; ?></textarea>
                     </div>   
 
                     <div class="form-group">
                         <label>Vol/No/Magz</label>
-                        <input type="text" name="vol_no" class="form-control" placeholder="" value="<?php echo $r->vol_no_magz; ?>" required/>
-                    </div>                 
+                        <input type="text" name="vol_no" class="form-control" placeholder="" value="<?php //echo $r->vol_no_magz; ?>" required/>
+                    </div>         
+
+                    <div class="form-group">
+                        <label>Archive</label>
+                        <!-- selected value in dropdown list
+                        <select class="form-control" name="archive">
+                            <!-- selected value from dropdown list
+                            <?php //foreach($n_list as $rowarchive){ ?>
+                                <option value="<?=$rowarchive->id_archive ?>"><?=$rowarchive->nm_archive?></option>
+                            <?php //} ?>
+
+                            <!-- populate value to dropdown list
+                            <option value=""></option>
+                            <?php //foreach($n_list as $rowarchive){ ?>
+                                <option value="<?=$rowarchive->id_archive ?>"><?=$rowarchive->nm_archive?></option>
+                            <?php //} ?>
+                        </select>
+                    </div>        
 
                     <div class="form-group">
                         <label>Image News</label><br>
-                        <?php if($r->img_news != ''){ ?>
-                            <!-- file img_news awal dibuat pada field hidden -->
-                            <input type="hidden" class="form-control" name="filelama" value="<?php echo $r->img_news; ?>" />
+                        <?php //if($r->img_news != ''){ ?>
+                            <!-- file img_news awal dibuat pada field hidden 
+                            <input type="hidden" class="form-control" name="filelama" value="<?php //echo $r->img_news; ?>" />
                             <img src="<?=base_url()?>img_news/<?=$r->img_news?>" style="width:50%" >
-                        <?php } else { ?>
+                        <?php //} else { ?>
                             <img src="<?=base_url()?>img_news/image_not_available.jpg" style="width:50%" >
-                        <?php } ?>
+                        <?php //} ?>
                     </div>
 
                     <div class="form-group">
@@ -176,12 +208,12 @@
                     </div>
                     <div class="form-group" >
                         <label class="fancy-radio">
-                            <input name="aktif" value="Y" type="radio" <?php echo set_value('Y', $r->isActiveNews) == 'Y' ? "checked" : ""; ?> ><span><i></i>Yes</span>
+                            <input name="aktif" value="Y" type="radio" <?php //echo set_value('Y', $r->isActiveNews) == 'Y' ? "checked" : ""; ?> ><span><i></i>Yes</span>
                         </label>
                     </div>
                     <div class="form-group" >
                         <label class="fancy-radio">
-                            <input name="aktif" value="N" type="radio" <?php echo set_value('N', $r->isActiveNews) == 'N' ? "checked" : ""; ?> ><span><i></i>No</span>
+                            <input name="aktif" value="N" type="radio" <?php //echo set_value('N', $r->isActiveNews) == 'N' ? "checked" : ""; ?> ><span><i></i>No</span>
                         </label>
                     </div>
 
@@ -198,7 +230,8 @@
         </div>
     </div>
 </div>
-<?php endforeach; ?>
+-->
+<?php //endforeach; ?>
 <!-- //edit modal -->
 
 <!-- view modal -->
@@ -213,6 +246,10 @@
             <div class="modal-body">
 
                 <table class="table table-striped">
+                    <tr>
+                        <td><b>Archive</b></td>
+                        <td><?php echo $row->nm_archive; ?></td>
+                    </tr>
                     <tr>
                         <td><b>Headline</b></td>
                         <td><?php echo $row->headline; ?></td>

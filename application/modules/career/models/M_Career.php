@@ -12,10 +12,19 @@ class M_Career extends CI_Model {
         parent::__construct();
     }   
 
-    function getWhereCareer(){
+    /*-- get career where isActiveNews = Y --*/
+    function getWhereCareer($limit, $start){
         $this->db->select('*');
         $this->db->where($this->active, 'Y');
-        return $this->db->get($this->table);
+        return $this->db->get($this->table, $limit, $start);
+    }
+
+    /*-- get carrer by career_slug --*/
+    function getWhere($where, $table){
+        $this->db->select('*');
+        $this->db->from($this->table);
+        $this->db->where($where);
+        return $this->db->get();
     }
 
 }
