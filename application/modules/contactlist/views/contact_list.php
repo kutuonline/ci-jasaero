@@ -25,6 +25,20 @@
 <!-- content -->
 <div class="row">
     <div class="col-md-12">
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">For Your Information</h3> 
+            </div>
+
+            <div class="panel-body">
+                <div class="alert alert-info alert-dismissible" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <i class="fa fa-info-circle"></i> If you see contact lists data on these list below, please check marketing team email.
+                </div>
+            </div>
+        </div>
+
         <!-- TABLE STRIPED -->
         <div class="panel">
             <div class="panel-heading">
@@ -35,11 +49,11 @@
                 <table id="table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>#</th>
                             <th>Full Name</th>
                             <th>Email</th>
-                            <th>Message Status</th>
-                            <th>Action</th>
+                            <th>Post Date</th>                            
                         </tr>
                     </thead>
 
@@ -51,15 +65,15 @@
                         ?>
 
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><?php echo $row->full_name; ?></td>
-                            <td><?php echo $row->email; ?></td>
-                            <td><?php echo $row->msg_status; ?></td>
                             <td>
                                 <div>
-                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_contact;?>"><i class="lnr lnr-magnifier"></i></a>
+                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_contact;?>"><i class="lnr lnr-magnifier" title="View"></i></a>
                                 </div>
                             </td>
+                            <td><?php echo $no++; ?></td>
+                            <td><?php echo $row->full_name; ?></td>
+                            <td><a href="mailto:<?php echo $row->email; ?>"><?php echo $row->email; ?></a></td>
+                            <td><?php echo tgl_indo($row->post_date_msg); ?></td>                    
                         </tr>
 
                         <?php } ?>
@@ -99,8 +113,12 @@
                         <td><?php echo $row->msg; ?></td>
                     </tr>
                     <tr>
-                        <td><b>Message Status</b></td>
-                        <td><?php echo $row->msg_status; ?></td>
+                        <td><b>Post Date Message</b></td>
+                        <td><?php echo tgl_indo($row->post_date_msg); ?></td>
+                    </tr>
+                    <tr>
+                        <td><b>Post Time Message</b></td>
+                        <td><?php echo $row->post_time_msg; ?></td>
                     </tr>
                 </table>
 

@@ -42,10 +42,10 @@
                 <table id="table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>#</th>
                             <th>Title</th>
                             <th>Active</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
 
@@ -57,15 +57,15 @@
                         ?>
 
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_profile;?>"><?php echo $row->title_profile; ?></a></td>
-                            <td><?php echo $row->isActiveProfile; ?></td>
                             <td>
                                 <div>
-                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_profile;?>"><i class="lnr lnr-magnifier"></i></a>                               
-                                    <?php echo anchor('profile/profile_list/deleteData/'.$row->id_profile,'<i class="lnr lnr-trash"></i>'); ?>
+                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_profile;?>"><i class="lnr lnr-magnifier" title="View"></i></a>                               
+                                    <?php echo anchor('profile/profile_list/deleteData/'.$row->id_profile,'<i class="lnr lnr-trash" title="Dellete"></i>'); ?>
                                 </div>
                             </td>
+                            <td><?php echo $no++; ?></td>
+                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_profile;?>" title="Edit"><?php echo $row->title_profile; ?></a></td>
+                            <td><?php echo $row->isActiveProfile; ?></td>                            
                         </tr>
 
                         <?php } ?>

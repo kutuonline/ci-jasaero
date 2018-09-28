@@ -42,12 +42,12 @@
                 <table id="table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>#</th>
                             <th>Application Name</th>
                             <th>URL</th>
                             <th>Icon</th>
-                            <th>Active</th>
-                            <th>Action</th>
+                            <th>Active</th>                            
                         </tr>
                     </thead>
 
@@ -59,17 +59,17 @@
                         ?>
 
                         <tr>
+                            <td>
+                                <div>
+                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_app;?>" title="View"><i class="lnr lnr-magnifier"></i></a>                               
+                                    <?php echo anchor('applist/app_list/deleteData/'.$row->id_app,'<i class="lnr lnr-trash" title="Delete"></i>'); ?>
+                                </div>
+                            </td>
                             <td><?php echo $no++; ?></td>
                             <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_app;?>" title='Edit'><?php echo $row->app_name; ?></a></td>
                             <td><a href='<?php echo $row->app_url; ?>' target='_blank' title='Open Application'><?php echo $row->app_url; ?></a></td>
                             <td><?php echo $row->app_icon; ?></td>
-                            <td><?php echo $row->isActiveApp; ?></td>
-                            <td>
-                                <div>
-                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_app;?>" title="View"><i class="lnr lnr-magnifier"></i></a>                               
-                                    <?php echo anchor('applist/app_list/deleteData/'.$row->id_app,'<i class="lnr lnr-trash"></i>'); ?>
-                                </div>
-                            </td>
+                            <td><?php echo $row->isActiveApp; ?></td>                            
                         </tr>
 
                         <?php } ?>

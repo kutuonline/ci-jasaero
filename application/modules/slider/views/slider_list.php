@@ -42,10 +42,10 @@
                 <table id="table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>#</th>
                             <th>Image</th>
                             <th>Active</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
 
@@ -57,15 +57,15 @@
                         ?>
 
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_slider;?>"><?php echo $row->slider_name; ?></a></td>
-                            <td><?php echo $row->isActiveSlider; ?></td>
                             <td>
                                 <div>
                                     <a href='' data-toggle="modal" data-target="#view<?=$row->id_slider;?>"><i class="lnr lnr-magnifier" title="View"></i></a>                               
                                     <?php echo anchor('slider/slider_list/deleteData/'.$row->id_slider,'<i class="lnr lnr-trash" title="Delete"></i>'); ?>
                                 </div>
                             </td>
+                            <td><?php echo $no++; ?></td>
+                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_slider;?>" title="Edit"><?php echo $row->slider_name; ?></a></td>
+                            <td><?php echo $row->isActiveSlider; ?></td>
                         </tr>
 
                         <?php } ?>

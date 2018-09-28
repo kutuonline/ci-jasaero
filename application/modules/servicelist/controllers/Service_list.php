@@ -39,7 +39,6 @@ class Service_list extends CI_Controller{
 		$slug_title = slug($this->input->post('title'));
 		$desc = $this->input->post('desc');
 		$detail = $this->input->post('detail');
-		$icon = $this->input->post('icon');
 
 		if ($_FILES['fupload']['name']) {
 			if (!$this->upload->do_upload('fupload')){
@@ -54,7 +53,6 @@ class Service_list extends CI_Controller{
 					'post_slug' => $slug_title,
 					'desc_service' => $desc,
 					'detail_service' => $detail,
-					'icon_service' => $icon,
 					'img_service' => $gbr['file_name'],
 					'cr_dt_service' => $tglskrg,
 					'cr_tm_service' => $jamskrg,
@@ -67,7 +65,6 @@ class Service_list extends CI_Controller{
 				'post_slug' => $slug_title,
 				'desc_service' => $desc,
 				'detail_service' => $detail,
-				'icon_service' => $icon,
 				'cr_dt_service' => $tglskrg,
 				'cr_tm_service' => $jamskrg,
 				'cr_user_service' => $this->session->userdata('complete_name')
@@ -119,7 +116,6 @@ class Service_list extends CI_Controller{
 		$slug_title = slug($this->input->post('title'));
 		$desc = $this->input->post('desc');
 		$detail = $this->input->post('detail');
-		$icon = $this->input->post('icon');
 		$aktif = $this->input->post('aktif');
 		
 		if ($_FILES['fupload']['name']){
@@ -135,7 +131,6 @@ class Service_list extends CI_Controller{
 					'post_slug' => $slug_title,
 					'desc_service' => $desc,
 					'detail_service' => $detail,
-					'icon_service' => $icon,
 					'img_service' => $gbr['file_name'],
 					'mod_dt_service' => $tglskrg,
 					'mod_tm_service' => $jamskrg,
@@ -153,7 +148,6 @@ class Service_list extends CI_Controller{
 				'post_slug' => $slug_title,
 				'desc_service' => $desc,
 				'detail_service' => $detail,
-				'icon_service' => $icon,
 				'mod_dt_service' => $tglskrg,
 				'mod_tm_service' => $jamskrg,
 				'mod_user_service' => $this->session->userdata('complete_name'),

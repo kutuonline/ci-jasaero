@@ -26,6 +26,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $config['base_url'] = 'http://'.$_SERVER['HTTP_HOST'].'/ci-jasaero/';
 
 /*
+$servername = filter_input(INPUT_SERVER, 'SERVER_NAME');
+$port = filter_input(INPUT_SERVER, 'SERVER_PORT');
+//$config['base_url']	= 'https://'.$servername.":".$port.'/jasaeroweb/';
+$config['base_url']	= 'https://jas-aero.com';
+*/
+
+/*
 |--------------------------------------------------------------------------
 | Index File
 |--------------------------------------------------------------------------
@@ -101,6 +108,10 @@ $config['charset'] = 'UTF-8';
 |
 */
 $config['enable_hooks'] = FALSE;
+/*-- active when go online
+-- setting SSL
+$config['enable_hooks'] = TRUE; 
+*/
 
 /*
 |--------------------------------------------------------------------------

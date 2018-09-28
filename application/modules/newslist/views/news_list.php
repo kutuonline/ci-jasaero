@@ -42,12 +42,12 @@
                 <table id="table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>#</th>
                             <th>Headline</th>
                             <th>Vol/No/Magz</th>
                             <th>Archive</th>
-                            <th>Active</th>
-                            <th>Action</th>
+                            <th>Active</th>                            
                         </tr>
                     </thead>
 
@@ -59,19 +59,20 @@
                         ?>
 
                         <tr>
+                            <td>
+                                <div>
+                                    <?php echo anchor('newslist/news_list/editData/'.$row->id_news,'<i class="lnr lnr-pencil" title="Edit"></i>'); ?>
+                                
+                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_news;?>"><i class="lnr lnr-magnifier" title="View"></i></a>                               
+                                    <?php echo anchor('newslist/news_list/deleteData/'.$row->id_news,'<i class="lnr lnr-trash" title="Delete"></i>'); ?>
+                                </div>
+                            </td>
                             <td><?php echo $no++; ?></td>
                             <!--<td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_news;?>"><?php //echo $row->headline; ?></a></td>-->
                             <td><?php echo $row->headline; ?></td>
                             <td><?php echo $row->vol_no_magz; ?></td>
                             <td><?php echo $row->nm_archive; ?></td>
-                            <td><?php echo $row->isActiveNews; ?></td>
-                            <td>
-                                <div>
-                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_news;?>"><i class="lnr lnr-magnifier" title="View"></i></a>                               
-                                    <?php echo anchor('newslist/news_list/deleteData/'.$row->id_news,'<i class="lnr lnr-trash" title="Delete"></i>'); ?>
-                                    <?php echo anchor('newslist/news_list/editData/'.$row->id_news,'<i class="lnr lnr-pencil" title="Edit"></i>'); ?>
-                                </div>
-                            </td>
+                            <td><?php echo $row->isActiveNews; ?></td>                            
                         </tr>
 
                         <?php } ?>

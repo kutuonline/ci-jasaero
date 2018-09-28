@@ -42,11 +42,11 @@
                 <table id="table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>#</th>
                             <th>Complete Name</th>
                             <th>Email</th>
-                            <th>Active</th>
-                            <th>Action</th>
+                            <th>Active</th>                            
                         </tr>
                     </thead>
 
@@ -58,16 +58,16 @@
                         ?>
 
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->users_id;?>"><?php echo $row->complete_name; ?></a></td>
-                            <td><?php echo $row->email; ?></td>
-                            <td><?php echo $row->is_active_users; ?></td>
                             <td>
                                 <div>
-                                    <a href='' data-toggle="modal" data-target="#view<?=$row->users_id;?>"><i class="lnr lnr-magnifier"></i></a>                               
-                                    <?php echo anchor('users/user_list/deleteData/'.$row->users_id,'<i class="lnr lnr-trash"></i>'); ?>
+                                    <a href='' data-toggle="modal" data-target="#view<?=$row->users_id;?>"><i class="lnr lnr-magnifier" title="View"></i></a>                               
+                                    <?php echo anchor('users/user_list/deleteData/'.$row->users_id,'<i class="lnr lnr-trash" title="Delete"></i>'); ?>
                                 </div>
                             </td>
+                            <td><?php echo $no++; ?></td>
+                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->users_id;?>" title="Edit"><?php echo $row->complete_name; ?></a></td>
+                            <td><?php echo $row->email; ?></td>
+                            <td><?php echo $row->is_active_users; ?></td>                            
                         </tr>
 
                         <?php } ?>

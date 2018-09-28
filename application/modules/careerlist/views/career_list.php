@@ -42,12 +42,12 @@
                 <table id="table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>#</th>
                             <th>Title</th>
                             <th>Post Date</th>
                             <th>Closing Date</th>
-                            <th>Active</th>
-                            <th>Action</th>
+                            <th>Active</th>                            
                         </tr>
                     </thead>
 
@@ -59,17 +59,17 @@
                         ?>
 
                         <tr>
-                            <td><?php echo $no++; ?></td>
-                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_career;?>"><?php echo $row->title_career; ?></a></td>
-                            <td><?php echo tgl_indo($row->post_date); ?></td>
-                            <td><?php echo tgl_indo($row->closing_date); ?></td>
-                            <td><?php echo $row->isActiveCareer; ?></td>
                             <td>
                                 <div>
-                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_career;?>"><i class="lnr lnr-magnifier"></i></a>                               
-                                    <?php echo anchor('careerlist/career_list/deleteData/'.$row->id_career,'<i class="lnr lnr-trash"></i>'); ?>
+                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_career;?>"><i class="lnr lnr-magnifier" title="View"></i></a>                               
+                                    <?php echo anchor('careerlist/career_list/deleteData/'.$row->id_career,'<i class="lnr lnr-trash" title="Delete"></i>'); ?>
                                 </div>
                             </td>
+                            <td><?php echo $no++; ?></td>
+                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_career;?>" title="Edit"><?php echo $row->title_career; ?></a></td>
+                            <td><?php echo tgl_indo($row->post_date); ?></td>
+                            <td><?php echo tgl_indo($row->closing_date); ?></td>
+                            <td><?php echo $row->isActiveCareer; ?></td>                            
                         </tr>
 
                         <?php } ?>

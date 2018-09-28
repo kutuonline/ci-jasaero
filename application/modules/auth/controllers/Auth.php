@@ -31,16 +31,7 @@ class Auth extends CI_Controller{
 			$this->session->set_userdata($data_session);
 			redirect(base_url('main/dashboard'));
 		} else {
-			$this->session->set_flashdata("failed",	
-				"<div class='panel-body'>
-					<div class='alert alert-danger alert-dismissible' role='alert'>
-                    	<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span>
-                    	</button><i class='fa fa-check-circle'></i>
-                   		Invalid username or password.
-                    	<br />
-                	</div>
-                </div>");
-			redirect(base_url('auth'));
+			echo "<script>alert('Invalid username or password.');window.location.href='auth';</script>";
 		}
 	}
 	function logout(){

@@ -17,6 +17,8 @@
 <link href="<?php echo base_url('assets/template/js/owl-carousel/owl.carousel.css');?>" rel="stylesheet">
 <link href="<?php echo base_url('assets/template/css/style.css');?>" rel="stylesheet" />
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+
 <!-- carousel css -->
 <link rel="stylesheet" href="<?php echo base_url('assets/template/css/carousel.css'); ?>">
 <!-- end -->

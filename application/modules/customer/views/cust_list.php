@@ -42,11 +42,11 @@
                 <table id="table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                     <thead>
                         <tr>
+                            <th>Action</th>
                             <th>#</th>
                             <th>Logo</th>
                             <th>Customer Name</th>
-                            <th>Active</th>
-                            <th>Action</th>
+                            <th>Active</th>                            
                         </tr>
                     </thead>
 
@@ -58,6 +58,12 @@
                         ?>
 
                         <tr>
+                            <td>
+                                <div>
+                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_cust;?>"><i class="lnr lnr-magnifier" title="View"></i></a>                               
+                                    <?php echo anchor('customer/cust_list/deleteData/'.$row->id_cust,'<i class="lnr lnr-trash" title="Delete"></i>'); ?>
+                                </div>
+                            </td>
                             <td><?php echo $no++; ?></td>
                             <td>
                             <?php if($row->cust_logo != ''){ ?>
@@ -66,14 +72,8 @@
                                 <img src="<?=base_url()?>img_customer/image_not_available.jpg" style="width:50%" >
                             <?php } ?>
                         </td>
-                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_cust;?>"><?php echo $row->cust_name; ?></a></td>
-                            <td><?php echo $row->isActiveCust; ?></td>
-                            <td>
-                                <div>
-                                    <a href='' data-toggle="modal" data-target="#view<?=$row->id_cust;?>"><i class="lnr lnr-magnifier"></i></a>                               
-                                    <?php echo anchor('customer/cust_list/deleteData/'.$row->id_cust,'<i class="lnr lnr-trash"></i>'); ?>
-                                </div>
-                            </td>
+                            <td><a href='' data-toggle="modal" data-target="#edit<?=$row->id_cust;?>" title="Edit"><?php echo $row->cust_name; ?></a></td>
+                            <td><?php echo $row->isActiveCust; ?></td>                            
                         </tr>
 
                         <?php } ?>
