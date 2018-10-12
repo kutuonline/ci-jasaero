@@ -69,6 +69,10 @@
 		<div class="container content">		
         <!-- Service Blcoks -->
 			<center>
+				<p>Below is an application that we have to monitor and support the improvement of service quality and human resources.</p>
+
+				<br>
+
 				<?php foreach($appQis as $row1){ ?>
 				<a href="<?php echo $row1->app_url; ?>" target="_blank" class="btn btn-primary">
 					<i class="fa fa-line-chart fa-5x" aria-hidden="true"></i><br>
@@ -155,6 +159,7 @@
                         <li><a href="<?php echo base_url('home/#customers'); ?>">Our Customers</a></li>
                         <li><a href="<?php echo base_url('applications'); ?>">Applications</a></li>
                         <li><a href="<?php echo base_url('news'); ?>">News</a></li>
+                        <li><a href="<?php echo base_url('archives'); ?>">Archives</a></li>
             			<li><a href="<?php echo base_url('career'); ?>">Career</a></li>
             			<li><a href="<?php echo base_url('contact'); ?>">Contact Us</a></li>
 					</ul>

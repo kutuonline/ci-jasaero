@@ -196,6 +196,7 @@ jika sudah online, mohon enable
                         <li><a href="<?php echo base_url('home/#customers'); ?>">Our Customers</a></li>
                         <li><a href="<?php echo base_url('applications'); ?>">Applications</a></li>
                         <li><a href="<?php echo base_url('news'); ?>">News</a></li>
+                        <li><a href="<?php echo base_url('archives'); ?>">Archives</a></li>
             			<li><a href="<?php echo base_url('career'); ?>">Career</a></li>
             			<li><a href="<?php echo base_url('contact'); ?>">Contact Us</a></li>
           			</ul>

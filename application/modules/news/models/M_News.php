@@ -7,6 +7,10 @@ class M_News extends CI_Model {
     public $id = 'id_news';
     public $active = 'isActiveNews';
     public $order = 'DESC';
+
+    public $table2 = 'archive';
+    public $id2 = 'id_archive';
+    public $active2 = 'isActiveArchive';
     
     function __construct(){
         parent::__construct();

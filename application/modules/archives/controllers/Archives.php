@@ -1,21 +1,30 @@
 <?php
 defined ('BASEPATH') OR exit ('No direct script access allowed');
 
-class News extends CI_Controller{
+class Archives extends CI_Controller{
 	
 	function __construct(){
 		parent::__construct();
 
 		$this->load->model('home/M_home');
-		$this->load->model('M_News');
+		$this->load->model('M_Archives');
 		$this->load->library('pagination');
 	}
 
 	function index(){
+		$data['idHome'] = $this->M_home->getId()->result();
+		$data['allArchive'] = $this->M_Archives->getArchive()->result();
+		$this->load->view('archives/archives', $data);
+	}
+
+	function details($nm){
+		/*
+		$parameter = $_REQUEST[$nm];
+
 		//konfigurasi pagination
-        $config['base_url'] = site_url('news/index'); //site url
-        $config['total_rows'] = $this->db->count_all('news'); //total row
-        $config['per_page'] = 6;  //show record per halaman
+        $config['base_url'] = site_url('archives/details/'.$parameter); //site url
+        $config['total_rows'] = $this->db->count_all('archive'); //total row
+        $config['per_page'] = 5;  //show record per halaman
         $config["uri_segment"] = 3;  // uri parameter
         $choice = $config["total_rows"] / $config["per_page"];
         $config["num_links"] = floor($choice);
@@ -40,24 +49,20 @@ class News extends CI_Controller{
         $config['last_tag_open']    = '<li class="page-item"><span class="page-link">';
         $config['last_tagl_close']  = '</span></li>';
 
+        $config['suffix'] = '?'.http_build_query($_REQUEST, '', ''&'');
+
         $this->pagination->initialize($config);
         $data['page'] = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+        */
 
-        $data['idHome'] = $this->M_home->getId()->result();
-
-        //panggil function getWhereNews yang ada pada model M_News. 
-        $data['newslist'] = $this->M_News->getWhereNews($config["per_page"], $data['page'])->result();
-
-        $data['pagination'] = $this->pagination->create_links();
-
-        $this->load->view('news/news', $data);
-	}
-
-	function details($slug){
-		$where = array('news_slug' => $slug);
+		$where = array('nm_archive' => $nm);
 		$data['idHome'] = $this->M_home->getId()->result();
-		$data['data_detail'] = $this->M_News->getWhere($where, 'news')->result();
-		$this->load->view('news/newsdetails', $data);
+
+		$data['data_detail'] = $this->M_Archives->getWhere($where, 'archive')->result();
+		//$data['data_detail'] = $this->M_Archives->getWhere($where, 'archive', $config["per_page"], $data['page'], $parameter)->result();
+
+		$data['pagination'] = $this->pagination->create_links();
+		$this->load->view('archives/archivesdetails', $data);
 	}
 
 }
