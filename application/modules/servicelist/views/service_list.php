@@ -39,7 +39,8 @@
             </div>
 
             <div class="panel-body">
-                <table id="table" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                <div class="table-responsive">
+                <table id="table" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
                     <thead>
                         <tr>
                             <th>Action</th>
@@ -73,6 +74,7 @@
                     
                     </tbody>
                 </table>
+                </div>
             </div>
         </div>
         <!-- END TABLE STRIPED -->

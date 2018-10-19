@@ -24,7 +24,35 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+<!-- avoid right click on mouse -->
+<script type="text/javascript">
+function mousedwn(e){try{if(event.button==2||event.button==3)return false}catch(e){if(e.which==3)return false}}document.oncontextmenu=function(){return false};document.ondragstart=function(){return false};document.onmousedown=mousedwn
+</script>
+
+<style type="text/css">
+* : (input, textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+
+}
+</style>
+
+<style type="text/css">
+img {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    }
+</style>
+<!-- end of avoid right click on mouse -->
+
+<!-- avoid view page source and ctrl + U -->
+<script type="text/javascript">
+window.addEventListener("keydown",function(e){if(e.ctrlKey&&(e.which==65||e.which==66||e.which==67||e.which==73||e.which==80||e.which==83||e.which==85||e.which==86)){e.preventDefault()}});document.keypress=function(e){if(e.ctrlKey&&(e.which==65||e.which==66||e.which==67||e.which==73||e.which==80||e.which==83||e.which==85||e.which==86)){}return false}
+</script>
+<!-- end of avoid view page source and ctrl + U -->
+
 </head>
+
 <body>
 <div id="wrapper">
 

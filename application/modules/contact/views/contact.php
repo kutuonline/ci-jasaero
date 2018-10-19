@@ -30,7 +30,7 @@
 <style>
     .google-maps {
         position: relative;
-        padding-bottom: 75%; // This is the aspect ratio
+        padding-bottom: 50%; /*-- This is the aspect ratio --*/
         height: 0;
         overflow: hidden;
     }
@@ -45,12 +45,40 @@
 <!-- end -->
 
 <!-- 
-javascript recaptcha 
+javascript recaptcha google
 jika sudah online, mohon enable
 -->
 <?php //echo $script_captcha; ?>
 
+<!-- avoid right click on mouse -->
+<script type="text/javascript">
+function mousedwn(e){try{if(event.button==2||event.button==3)return false}catch(e){if(e.which==3)return false}}document.oncontextmenu=function(){return false};document.ondragstart=function(){return false};document.onmousedown=mousedwn
+</script>
+
+<style type="text/css">
+* : (input, textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+
+}
+</style>
+
+<style type="text/css">
+img {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+    }
+</style>
+<!-- end of avoid right click on mouse -->
+
+<!-- avoid view page source and ctrl + U -->
+<script type="text/javascript">
+window.addEventListener("keydown",function(e){if(e.ctrlKey&&(e.which==65||e.which==66||e.which==67||e.which==73||e.which==80||e.which==83||e.which==85||e.which==86)){e.preventDefault()}});document.keypress=function(e){if(e.ctrlKey&&(e.which==65||e.which==66||e.which==67||e.which==73||e.which==80||e.which==83||e.which==85||e.which==86)){}return false}
+</script>
+<!-- end of avoid view page source and ctrl + U -->
+
 </head>
+
 <body>
 <div id="wrapper">
 	<!-- start header -->
@@ -149,19 +177,32 @@ jika sudah online, mohon enable
             			</div>
 
             			<!-- 
-            			menampilkan re-captcha
-            			jika sudah onlinr, mohon di enable
+            			menampilkan re-captcha google
+            			jika sudah online, mohon di enable
             			-->
-            			<!--<div class="form-group">
+            			<!--
+            			<div class="form-group">
                 			<?php //echo $captcha; ?>
             			</div>
             			-->
 
-	    				<button class="btn btn-primary pull-right">Send</button><br />
+            			<?php echo validation_errors(); ?>
+
+ 						<?php echo form_open(); ?>
+
+     					<?php echo $math_captcha_question;?>
+
+     					<?php echo form_input('math_captcha');?>
+
+     					<?php echo form_submit('submit', 'Submit'); ?>
+
+ 						<?php echo form_close();?>
+
+	    				<!--<button class="btn btn-primary pull-right">Send</button><br />-->
 	    			</form>
 				</div>
 
-				<br><br>
+				<br><br><br>
 
 				<!--<div class="col-md-6">-->
 				<div class="google-maps">

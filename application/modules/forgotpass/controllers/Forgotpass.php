@@ -22,7 +22,7 @@ class Forgotpass extends CI_Controller {
             $userInfo = $this->M_Forgotpass->getUserInfoByEmail($clean);  
                
             if(!$userInfo){  
-            	echo "<script>alert('Please type your vallid email.');window.location.href='forgotpass';</script>";
+            	echo "<script>alert('Please type your valid email.');window.location.href='forgotpass';</script>";
             }    
                
              //build token                          
@@ -32,9 +32,8 @@ class Forgotpass extends CI_Controller {
              $link = '<a href="' . $url . '">' . $url . '</a>';   
                
              $message = '';             
-             $message .= '<strong>Hai, anda menerima email ini karena ada permintaan untuk memperbaharui  
-                 password anda.</strong><br>';  
-             $message .= '<strong>Silakan klik link ini:</strong> ' . $link;         
+             $message .= '<strong>Hi, your request accepted.</strong><br>';  
+             $message .= '<strong>Please click this link:</strong> ' . $link;         
    
              echo $message; //send this through mail  
              exit;  
@@ -49,7 +48,7 @@ class Forgotpass extends CI_Controller {
        $user_info = $this->M_Forgotpass->isTokenValid($cleanToken); //either false or array();          
          
        if(!$user_info){  
-         $this->session->set_flashdata('sukses', 'Token tidak valid atau kadaluarsa');  
+         $this->session->set_flashdata('sukses', 'Invalid token, or token was expired.');  
          redirect(base_url('auth/auth'),'refresh');   
        }    
    
@@ -76,8 +75,7 @@ class Forgotpass extends CI_Controller {
          if(!$this->M_Forgotpass->updatePass($cleanPost)){  
            $this->session->set_flashdata('sukses', 'Update password gagal.');  
          }else{  
-           $this->session->set_flashdata('sukses', 'Password anda sudah  
-             diperbaharui. Silakan login.');  
+           $this->session->set_flashdata('sukses', 'Your password has been updated. Please login to your account.');  
          }  
          redirect(base_url('auth/auth'),'refresh');         
        }  

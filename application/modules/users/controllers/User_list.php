@@ -106,7 +106,7 @@ class User_list extends CI_Controller{
 		$id = $this->input->post('id');
 		$fileLama = $this->input->post('filelama');
 		$completeNm = $this->input->post('completenm');
-		$pass = md5($this->input->post('passwd'));
+		//$pass = md5($this->input->post('passwd'));
 		$gender = $this->input->post('gender');
 		$phoneNo = $this->input->post('phone_no');		
 		$email = $this->input->post('email');
@@ -127,7 +127,7 @@ class User_list extends CI_Controller{
 					'email' => $email,
 					'photo' => $gbr['file_name'],
 					'users_level' => $ulevel,
-					'pass_encrypt' => $pass,
+					//'pass_encrypt' => $pass,
 					'users_moddate' => $tglskrg,
 					'users_modtime' => $jamskrg,
 					'users_moduser' => $this->session->userdata('complete_name')
@@ -144,7 +144,7 @@ class User_list extends CI_Controller{
 			'phone_no' => $phoneNo,
 			'email' => $email,
 			'users_level' => $ulevel,
-			'pass_encrypt' => $pass,
+			//'pass_encrypt' => $pass,
 			'users_moddate' => $tglskrg,
 			'users_modtime' => $jamskrg,
 			'users_moduser' => $this->session->userdata('complete_name')

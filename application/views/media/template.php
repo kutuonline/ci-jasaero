@@ -85,7 +85,33 @@
                         </li>
                         -->
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url('assets/img/user.png'); ?>" class="img-circle" alt="Avatar"> <span><?php echo ucfirst($this->session->userdata('complete_name')); ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            <?php 
+                                $email = $this->session->userdata('email');
+                                $sql = "SELECT users.photo FROM users WHERE email = '$email'";
+                                $query = $this->db->query($sql);
+                                $num = $query->num_rows();
+
+                                if($num > 0){
+                                    $pic = $query->row()->photo;
+                                    if($pic == ''){
+                                        $pic = 'image_not_available.jpg';
+                                    }
+                                    else {
+                                        $pic = $pic;
+                                    }
+                                } else {
+                                    $pic = 'image_not_available.jpg';
+                                }
+
+                                $image = base_url('./img_user/'.$pic);
+                                    if(!file_exists ($image)){
+                                        $picture = $image;
+                                    } else {
+                                        $picture = base_url('img_user/image_not_available.jpg');
+                                    }
+                            ?>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?=$picture?>" class="img-circle" alt="Avatar"> <span><?php echo ucfirst($this->session->userdata('complete_name')); ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                            
                             <ul class="dropdown-menu">
                                 <!--
                                 <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
@@ -113,7 +139,9 @@
                             <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-screen"></i> <span>Content</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subPages" class="collapse ">
                                 <ul class="nav">
+                                    <?php if($this->session->userdata('users_level') == 'Sadmin' OR $this->session->userdata('users_level') == 'Admin') { ?>
                                     <li><a href="<?php echo base_url('id_web/web_list');?>" class="">Web Identity</a></li>
+                                    <?php } ?>
                                     <li><a href="<?php echo base_url('slider/slider_list');?>" class="">Image Slider</a></li>
                                 </ul>
                             </div>
@@ -126,7 +154,9 @@
                                     <li><a href="<?php echo base_url('servicelist/service_list');?>" class="">Services</a></li>
                                     <!--<li><a href="<?php //echo base_url('facility/facility_list');?>" class="">Facility</a></li>-->
                                     <li><a href="<?php echo base_url('customer/cust_list');?>" class="">Customer</a></li>
+                                    <?php if($this->session->userdata('users_level') == 'Sadmin' OR $this->session->userdata('users_level') == 'Admin') { ?>
                                     <li><a href="<?php echo base_url('applist/app_list');?>" class="">Application</a></li>
+                                    <?php } ?>
                                     <li><a href="<?php echo base_url('careerlist/career_list');?>" class="">Career</a></li>
                                     <li><a href="<?php echo base_url('newslist/news_list');?>" class="">News</a></li>
                                 </ul>
@@ -136,7 +166,9 @@
                             <a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr-cog"></i> <span>Settings</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subPages3" class="collapse ">
                                 <ul class="nav">
+                                    <?php if($this->session->userdata('users_level') == 'Sadmin') { ?>
                                     <li><a href="<?php echo base_url('users/user_list');?>" class="">Users</a></li>
+                                    <?php } ?>
                                     <li><a href="<?php echo base_url('archivelist/archive_list');?>" class="">Archives</a></li>
                                 </ul>
                             </div>

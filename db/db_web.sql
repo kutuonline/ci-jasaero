@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2018 at 08:09 AM
+-- Generation Time: Oct 16, 2018 at 08:27 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -243,7 +243,7 @@ CREATE TABLE `identitas_web` (
 --
 
 INSERT INTO `identitas_web` (`id_identitas`, `website_name`, `department`, `corp_name`, `corp_address`, `postal_code`, `phone_no`, `fax_no`, `pic_email1`, `email1`, `pic_email2`, `email2`, `pic_email3`, `email3`, `url`, `facebook`, `twitter`, `instagram`, `welcome_note`, `meta_desc`, `meta_keyword`, `mod_dt_webid`, `mod_tm_webid`, `mod_user_webid`) VALUES
-(1, 'JAS Aero-Engineering Official Website', 'Marketing & Customer Relations Department', 'PT JAS Aero-Engineering Services', '<p>Wisma Soewarna 1st Floor, Soewarna Integrated Business Park, Soekarno-Hatta International Airport Tangerang-Banten. Indonesia. 15126.</p>', 15126, '+62 21 5591 1671-73', '+62 21 5591 3025', 'Indra', 'waskita@jas-aero.com', 'Irma', 'marketing@jas-aero.com', 'Ariesta', 'ariesta@jas-aero.com', 'https://jas-aero.com', '-', '-', '-', '<p>Provider of aircraft maintenance and repair services.</p>', '<p>jas aero, jas aero-engineering, jas aero-engineering services, jae, jas engineering, cas destination, ramp handling, ground support equipment, technical ramp, aircraft exterior interior cleaning, bonded store, DGCA Indonesia, FAA, EASA, CAAS, CASA, CAAM, CAAP, CAAT, CAASL, CAA ROC, MOLIT, UAE GCAA, QCAA, DGCA Turkish, PACA, Emirates Airline, Etihad Airline, Jetstar International, Jetstar Asia, Royal Brunei, Turkish Airline, Air New Zealand, Thai Airways, Indonesia Air Asia, Indonesia Air Asia X</p>', '<p>JAS, JAE, CAS, Engineering, Aircraft, Airline, Authorization, GSE, Aero, Emirates, Etihad, Brunei, Jetstar, Turkish, Airways, Indonesia, Thai, Asia, Air, ramp, handling, bonded, store, DGCA, FAA, EASA, CASA, MOLIT, UAE GCAA, CAAT, CAASL, PACA, QCAA, CAAS</p>', '2018-09-26', '11:07:26', 'Andriansyah Doni');
+(1, 'JAS Aero-Engineering Official Website', 'Marketing & Customer Relations Department', 'PT JAS Aero-Engineering Services', '<p>Wisma Soewarna 1st Floor, Soewarna Integrated Business Park Soekarno-Hatta International Airport, Pajang - Benda, Kota Tangerang. Banten. Indonesia. 15126.</p>', 15126, '+62 21 5591 1671-73', '+62 21 5591 3025', 'Indra', 'waskita@jas-aero.com', 'Irma', 'marketing@jas-aero.com', 'Ariesta', 'ariesta@jas-aero.com', 'https://jas-aero.com', '-', '-', '-', '<p>Provider of aircraft maintenance and repair services.</p>', '<p>jas aero, jas aero-engineering, jas aero-engineering services, jae, jas engineering, cas destination, ramp handling, ground support equipment, technical ramp, aircraft exterior interior cleaning, bonded store, DGCA Indonesia, FAA, EASA, CAAS, CASA, CAAM, CAAP, CAAT, CAASL, CAA ROC, MOLIT, UAE GCAA, QCAA, DGCA Turkish, PACA, Emirates Airline, Etihad Airline, Jetstar International, Jetstar Asia, Royal Brunei, Turkish Airline, Air New Zealand, Thai Airways, Indonesia Air Asia, Indonesia Air Asia X</p>', '<p>JAS, JAE, CAS, Engineering, Aircraft, Airline, Authorization, GSE, Aero, Emirates, Etihad, Brunei, Jetstar, Turkish, Airways, Indonesia, Thai, Asia, Air, ramp, handling, bonded, store, DGCA, FAA, EASA, CASA, MOLIT, UAE GCAA, CAAT, CAASL, PACA, QCAA, CAAS</p>', '2018-10-12', '09:45:18', 'Andriansyah Doni');
 
 -- --------------------------------------------------------
 

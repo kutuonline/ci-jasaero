@@ -7,9 +7,11 @@ class Auth extends CI_Controller{
 		parent::__construct();
 		$this->load->model('Auth_model');
 	}
+
 	function index(){
 		$this->load->view('login');
 	}
+
 	function actLogin(){		
 		$cek = $this->Auth_model->cekLogin();
 		if($cek){
@@ -34,6 +36,7 @@ class Auth extends CI_Controller{
 			echo "<script>alert('Invalid username or password.');window.location.href='auth';</script>";
 		}
 	}
+
 	function logout(){
 		$this->session->sess_destroy();
 		redirect(base_url('auth'));
