@@ -7,6 +7,7 @@ class User_list extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('User_model');
+		$this->load->model('log/M_log');
 		$this->load->helper(array('form','fungsidate_helper','url'));
 		$this->load->library(array('form_validation','session','upload'));
 	}
@@ -79,6 +80,8 @@ class User_list extends CI_Controller{
                    	Data has been saved.
                     <br />
                 </div>");
+
+			helper_log("add", "Add/save users.");
 			redirect(base_url('users/user_list'));
 		}
 	}
@@ -169,6 +172,8 @@ class User_list extends CI_Controller{
                    	Data has been saved.
                     <br />
                 </div>");
+
+			helper_log("edit", "Edit/update users.");
 			redirect(base_url('users/user_list'));
 		}
 	}
@@ -194,6 +199,8 @@ class User_list extends CI_Controller{
                    	Data has been deleted.
                     <br />
                 </div>");
+
+		helper_log("delete", "Delete users.");
 		redirect(base_url('users/user_list'));
 	}
 	

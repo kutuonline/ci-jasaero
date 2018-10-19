@@ -7,6 +7,7 @@ class Web_list extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('Web_model');
+		$this->load->model('log/M_log');
 		$this->load->helper(array('form','fungsidate_helper','url'));
 		$this->load->library(array('form_validation','session'));
 	}
@@ -83,6 +84,7 @@ class Web_list extends CI_Controller{
                     <br />
                 </div>");
 
+		helper_log("edit", "Edit/update website identity.");
 		redirect(base_url('id_web/web_list'));
 	}
 	

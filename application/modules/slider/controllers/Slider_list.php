@@ -7,6 +7,7 @@ class Slider_list extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('Slider_model');
+		$this->load->model('log/M_log');
 		$this->load->helper(array('form','fungsidate_helper','url'));
 		$this->load->library(array('form_validation','session','upload'));
 	}
@@ -80,6 +81,7 @@ class Slider_list extends CI_Controller{
                    	Image slider has been saved.
                     <br />
                 </div>");
+			helper_log("add", "Add/save image slider.");
 			redirect(base_url('slider/slider_list'));
 		}
 	}
@@ -156,6 +158,7 @@ class Slider_list extends CI_Controller{
                 Image slider has been updated.
                 <br />
             </div>");
+		helper_log("edit", "Edit/update image slider.");
 		redirect(base_url('slider/slider_list'));		
 	}
 	
@@ -180,6 +183,7 @@ class Slider_list extends CI_Controller{
                 Image slider has been deleted.
                 <br />
             </div>");
+		helper_log("delete", "Delete image slider.");
 		redirect(base_url('slider/slider_list'));
 	}
 	

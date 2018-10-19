@@ -7,6 +7,7 @@ class App_list extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('App_model');
+		$this->load->model('log/M_log');
 		$this->load->helper(array('form','fungsidate_helper','url'));
 		$this->load->library(array('form_validation','session','upload'));
 	}
@@ -50,6 +51,7 @@ class App_list extends CI_Controller{
                    	Application has been saved.
                     <br />
                 </div>");
+			helper_log("add", "Add/save application.");
 			redirect(base_url('applist/app_list'));
 		}
 	}
@@ -90,6 +92,7 @@ class App_list extends CI_Controller{
                 <br />
             </div>");
 
+		helper_log("edit", "Edit/update application.");
 		redirect(base_url('applist/app_list'));
 	}
 	
@@ -105,6 +108,8 @@ class App_list extends CI_Controller{
                 Application has been deleted.
                 <br />
             </div>");
+
+		helper_log("delete", "Delete application.");
 		redirect(base_url('applist/app_list'));
 	}
 	

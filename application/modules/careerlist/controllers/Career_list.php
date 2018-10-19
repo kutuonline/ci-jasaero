@@ -7,6 +7,7 @@ class Career_list extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('Career_model');
+		$this->load->model('log/M_log');
 		$this->load->helper(array('form','fungsidate_helper','url'));
 		$this->load->library(array('form_validation','session','upload'));
 	}
@@ -48,6 +49,8 @@ class Career_list extends CI_Controller{
                    	Career has been saved.
                     <br />
                 </div>");
+
+			helper_log("add", "Add/save career list.");
 			redirect(base_url('careerlist/career_list'));
 		}
 	}
@@ -85,6 +88,8 @@ class Career_list extends CI_Controller{
                 Career has been updated.
                 <br />
             </div>");
+
+		helper_log("edit", "Edit/update career list.");
 		redirect(base_url('careerlist/career_list'));
 	}
 	
@@ -99,6 +104,8 @@ class Career_list extends CI_Controller{
                 Career has been deleted.
                 <br />
             </div>");
+
+		helper_log("delete", "Delete career list.");
 		redirect(base_url('careerlist/career_list'));
 	}
 	

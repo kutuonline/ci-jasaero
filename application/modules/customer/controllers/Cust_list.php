@@ -7,6 +7,7 @@ class Cust_list extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('Cust_model');
+		$this->load->model('log/M_log');
 		$this->load->helper(array('form','fungsidate_helper','url'));
 		$this->load->library(array('form_validation','session','upload'));
 	}
@@ -77,6 +78,7 @@ class Cust_list extends CI_Controller{
                    	Customer has been saved.
                     <br />
                 </div>");
+			helper_log("add", "Add/save customers.");
 			redirect(base_url('customer/cust_list'));
 		}
 	}
@@ -150,6 +152,7 @@ class Cust_list extends CI_Controller{
                 Customer has been updated.
                 <br />
             </div>");
+		helper_log("edit", "Edit/update customers.");
 		redirect(base_url('customer/cust_list'));		
 	}
 	
@@ -174,6 +177,7 @@ class Cust_list extends CI_Controller{
                 Customer has been deleted.
                 <br />
             </div>");
+		helper_log("delete", "Delete customers.");
 		redirect(base_url('customer/cust_list'));
 	}
 	

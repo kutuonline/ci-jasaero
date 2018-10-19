@@ -7,6 +7,7 @@ class News_list extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('News_model');
+		$this->load->model('log/M_log');
 		$this->load->helper(array('form','fungsidate_helper','url'));
 		$this->load->library(array('form_validation','session','upload'));
 	}
@@ -97,6 +98,8 @@ class News_list extends CI_Controller{
                    	News has been saved.
                     <br />
                 </div>");
+
+			helper_log("add", "Add/save news list.");
 			redirect(base_url('newslist/news_list'));
 		}
 	}
@@ -182,6 +185,8 @@ class News_list extends CI_Controller{
                 News has been updated.
                 <br />
             </div>");
+
+		helper_log("edit", "Edit/update news list.");
 		redirect(base_url('newslist/news_list'));		
 	}
 	
@@ -206,6 +211,8 @@ class News_list extends CI_Controller{
                 News has been deleted.
                 <br />
             </div>");
+
+		helper_log("delete", "Delete news list.");
 		redirect(base_url('newslist/news_list'));
 	}
 	

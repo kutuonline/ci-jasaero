@@ -7,6 +7,7 @@ class Profile_list extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('Profile_model');
+		$this->load->model('log/M_log');
 		$this->load->helper(array('form','fungsidate_helper','url'));
 		$this->load->library(array('form_validation','session','upload'));
 	}
@@ -80,6 +81,7 @@ class Profile_list extends CI_Controller{
                    	Profile has been saved.
                     <br />
                 </div>");
+			helper_log("add", "Add/save profile.");
 			redirect(base_url('profile/profile_list'));
 		}
 	}
@@ -156,6 +158,7 @@ class Profile_list extends CI_Controller{
                 Profile has been updated.
                 <br />
             </div>");
+		helper_log("edit", "Edit/update profile.");
 		redirect(base_url('profile/profile_list'));		
 	}
 	
@@ -180,6 +183,7 @@ class Profile_list extends CI_Controller{
                 Profile has been deleted.
                 <br />
             </div>");
+		helper_log("delete", "Delete profile.");
 		redirect(base_url('profile/profile_list'));
 	}
 	

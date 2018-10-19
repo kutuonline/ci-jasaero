@@ -7,6 +7,7 @@ class Archive_list extends CI_Controller{
 		parent::__construct();
 
 		$this->load->model('Archive_model');
+		$this->load->model('log/M_log');
 		$this->load->helper(array('form','fungsidate_helper','url'));
 		$this->load->library(array('form_validation','session','upload'));
 	}
@@ -44,6 +45,8 @@ class Archive_list extends CI_Controller{
                    	Archive has been saved.
                     <br />
                 </div>");
+
+			helper_log("add", "Add/save archive list.");
 			redirect(base_url('archivelist/archive_list'));
 		}
 	}
@@ -77,6 +80,8 @@ class Archive_list extends CI_Controller{
                 Archive has been updated.
                 <br />
             </div>");
+
+		helper_log("edit", "Edit/update archive list.");
 		redirect(base_url('archivelist/archive_list'));
 	}
 	
@@ -91,6 +96,8 @@ class Archive_list extends CI_Controller{
                 Archive has been deleted.
                 <br />
             </div>");
+
+		helper_log("delete", "Delete archive list.");
 		redirect(base_url('archivelist/archive_list'));
 	}
 	
