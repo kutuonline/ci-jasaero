@@ -45,7 +45,11 @@ class M_home extends CI_Model {
     }
 
     function getCust(){
-        $this->db->order_by($this->id4, $this->order4);
+        //$this->db->order_by($this->id4, $this->order4);
+        //return $this->db->get($this->table4);
+
+        $this->db->select('*');
+        $this->db->where('isActiveCust', 'Y');
         return $this->db->get($this->table4);
     }
 

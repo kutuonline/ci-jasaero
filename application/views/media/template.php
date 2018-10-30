@@ -168,6 +168,7 @@
                                 <ul class="nav">
                                     <?php if($this->session->userdata('users_level') == 'Sadmin') { ?>
                                     <li><a href="<?php echo base_url('users/user_list');?>" class="">Users</a></li>
+                                    <li><a href="<?php echo base_url('log/log_list');?>" class="">Logs</a></li>
                                     <?php } ?>
                                     <li><a href="<?php echo base_url('archivelist/archive_list');?>" class="">Archives</a></li>
                                 </ul>

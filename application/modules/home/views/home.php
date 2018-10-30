@@ -176,7 +176,7 @@ window.addEventListener("keydown",function(e){if(e.ctrlKey&&(e.which==65||e.whic
               </div>
           </div>
       </div>
-  </section>  
+  </section> 
 
   <section id="clients">
       <div class="container">
@@ -209,7 +209,7 @@ window.addEventListener("keydown",function(e){if(e.ctrlKey&&(e.which==65||e.whic
                             <div class="row">
                                 <?php } ?>
                                 <div class="col-md-3">
-                                    <img src="<?=base_url()?>img_customer/<?=$logo->cust_logo?>" alt="Image" style="max-width:100%;" oncontextmenu="return false;">
+                                    <img src="<?=base_url()?>img_customer/<?=$logo->cust_logo?>" alt="customer_logo" title="<?=$logo->cust_name?>" style="max-width:100%;" oncontextmenu="return false;">
                                 </div>
                                 <?php } ?>
                             </div><!--.row-->
@@ -223,6 +223,22 @@ window.addEventListener("keydown",function(e){if(e.ctrlKey&&(e.which==65||e.whic
         </div>
     </div><!--.container-->
     <!-- end -->
+
+    <section id="clients">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="section-title text-center">
+                      <h2>A Join Venture Between</h2>
+                      <p>
+                        <img src="<?php echo base_url('assets/img/cas-group.png'); ?>">
+                        <img src="<?php echo base_url('assets/img/SIAEngineering.png'); ?>">
+                      </p>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </section>
 
     <footer>
     <div class="container">
@@ -248,22 +264,24 @@ window.addEventListener("keydown",function(e){if(e.ctrlKey&&(e.which==65||e.whic
                     <ul class="link-list">
                         <li><a href="<?php echo base_url('aboutus'); ?>">About Us</a></li>
                         <li><a href="<?php echo base_url('service'); ?>">Services</a></li>
-                        <li><a href="<?php echo base_url('home/#customers'); ?>">Our Customers</a></li>
-                        <li><a href="<?php echo base_url('applications'); ?>">Applications</a></li>
                         <li><a href="<?php echo base_url('news'); ?>">News</a></li>
                         <li><a href="<?php echo base_url('archives'); ?>">Archives</a></li>
+                        <li><a href="<?php echo base_url('home/#customers'); ?>">Our Customers</a></li>
+                        <li><a href="<?php echo base_url('applications'); ?>">Applications</a></li>
                         <li><a href="<?php echo base_url('career'); ?>">Career</a></li>
                         <li><a href="<?php echo base_url('contact'); ?>">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
 
+
+            
+
             <div class="col-lg-3">
                 <div class="widget">
-                    <h5 class="widgetheading">A Join Venture Between</h5>
+                    <h5 class="widgetheading">Associate Member Of</h5>
                     <ul class="link-list">
-                        <!--<img src="<?php //echo base_url('assets/img/iamsa.jpg');?>" style="width:85%" oncontextmenu="return false;"><br><br>-->
-                        <img src="<?php echo base_url('assets/img/iatp.png');?>" style="width:85%" oncontextmenu="return false;">
+                        <img src="<?php echo base_url('assets/img/IATP.png');?>" style="width:85%" oncontextmenu="return false;"><br><br>
                     </ul>
                 </div>
             </div>
@@ -273,7 +291,6 @@ window.addEventListener("keydown",function(e){if(e.ctrlKey&&(e.which==65||e.whic
                     <h5 class="widgetheading">Member Of</h5>
                     <ul class="link-list">
                         <img src="<?php echo base_url('assets/img/iamsa.jpg');?>" style="width:85%" oncontextmenu="return false;"><br><br>
-                        <!--<img src="<?php //echo base_url('assets/img/iatp.png');?>" style="width:85%" oncontextmenu="return false;">-->
                     </ul>
                 </div>
             </div>
